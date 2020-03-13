@@ -1,0 +1,39 @@
+# Criando e escrevendo em arquivos de texto (modo 'w').
+arquivo = open('arq01.txt','w')
+arquivo.write("Bóson Treinamentos\n")
+arquivo.write("Criando um arquivo de texto com Python\n")
+arquivo.write("Arquivo criado por Fábio dos Reis\n")
+arquivo.write("É isso ai pessoal!\n")
+arquivo.close()
+
+# Lendo o arquivo criado:
+arquivo = open('arq01.txt','r')
+for linha in arquivo:
+    linha = linha.rstrip()
+    print (linha)
+arquivo.close()
+
+Para substituir determinada linha de um arquivo, você pode usar essa função:
+
+def alterar_linha(path,index_linha,nova_linha):
+    with open(path,'r') as f:
+        texto=f.readlines()
+    with open(path,'w') as f:
+        for i in texto:
+            if texto.index(i)==index_linha:
+                f.write(nova_linha+'\n')
+            else:
+                f.write(i)
+Onde: path é uma string com o nome do arquivo que você quer alterar; index_linha é o número da linha contado a partir de 0; nova_linha é uma string do conteúdo da nova linha.
+
+Para achar em qual linha está uma string, você pode usar essa função:
+
+def encontrar_string(path,string):
+    with open(path,'r') as f:
+        texto=f.readlines()
+    for i in texto:
+        if string in i:
+            print(texto.index(i))
+            return
+    print('String não encontrada')
+Onde string é a string que você quer encontrar. Qualquer dúvida, comenta aí.
