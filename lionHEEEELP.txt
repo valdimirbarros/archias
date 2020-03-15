@@ -37,3 +37,5 @@ def encontrar_string(path,string):
             return
     print('String não encontrada')
 Onde string é a string que você quer encontrar. Qualquer dúvida, comenta aí.
+
+
